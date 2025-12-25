@@ -10,7 +10,7 @@ class MultiHeadAttention(nnx.Module):
         self.head_dim = d_model // num_heads
         self.d_model = d_model
         
-        # NNXでは初期化時にrngsを渡すだけで、内部でキー分割を自動で行ってくれます
+        
         self.q_proj = nnx.Linear(d_model, d_model, rngs=rngs)
         self.k_proj = nnx.Linear(d_model, d_model, rngs=rngs)
         self.v_proj = nnx.Linear(d_model, d_model, rngs=rngs)
